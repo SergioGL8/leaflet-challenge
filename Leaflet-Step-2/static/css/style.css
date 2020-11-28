@@ -9,57 +9,22 @@ html {
   height: 100%;
 }
 
-.legend {
-  padding: 8px 8px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 200;
-  background-color: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0);
-  border-radius: 3px;
-  line-height: 24px;
-  color: black;
+/* Set Legend Style */
+.info {
+  padding: 1px 10px;
+  background: #E5E7E9;
+  border-radius: 5px;
 }
 
-.legend k {
+.legend {
+  line-height: 25px;
+  color: #000000;
+}
+
+.legend i {
   width: 20px;
   height: 20px;
-  float: left;
-  margin: 0 8px 0 0;
-  opacity: 0.9;
-}
-
-.legend span {
-  position: relative;
-}
-
-.maglt2{
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  background-color: #006633;
-}
-.maglt3{
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  background-color: #99CC00;
-}
-.maglt4{
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  background-color: #FFFF00;
-}
-.maglt5{
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  background-color: #FF6600;
-}
-.maggt5{
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  background-color: #CC0033;
+  float: right;
+  margin-right: 10px;
+  opacity: 0.75;
 }
