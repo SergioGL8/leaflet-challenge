@@ -50,7 +50,6 @@ Your first task is to visualize an earthquake data set.
 
    * Your visualization should look something like the map above.
    
-- - 
 
 ### Level 2: More Data (Optional)
 
@@ -64,7 +63,6 @@ In this step we are going to..
 
 * Add layer controls to our map.
 
-- - 
 
 ### Assessment
 
