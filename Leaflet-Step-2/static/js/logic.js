@@ -123,11 +123,11 @@ L.control.layers(baseMaps, overlayMaps, {
 
      function magColor(mag) {
       var color = "";
-      if (mag <= 2) { color = "#66bb77"; }
-      else if (mag <= 3) {color = "#aadd76"; }
-      else if (mag <= 4) { color = "#edee88"; }
-      else if (mag <= 5) {color = "#ffa975"; }
-      else { color = "#ff6565"; }
+      if (mag <= 2) { color = "#006633"; }
+      else if (mag <= 3) {color = "#99CC00"; }
+      else if (mag <= 4) { color = "#FFFF00"; }
+      else if (mag <= 5) {color = "#FF6600"; }
+      else { color = "#006633"; }
     
     return color;
     
