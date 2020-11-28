@@ -10,8 +10,8 @@ Table of contents <a name="toc"></a>
 1. [Background](#1)
 2. [Instructions](#2)
 3. [Starter code](#3)
-4. [D3 Data Journalism - D3 Doppler](#4)
-5. [D3 Data Journalism - Impress the Boss](#5)
+4. [Leaflet-Step-1](#4)
+5. [Leaflet-Step-2](#5)
 6. [Visualization](#6)
 
 ---
@@ -50,7 +50,7 @@ Your first task is to visualize an earthquake data set.
 
    * Your visualization should look something like the map above.
    
-- - -
+- - 
 
 ### Level 2: More Data (Optional)
 
@@ -64,7 +64,7 @@ In this step we are going to..
 
 * Add layer controls to our map.
 
-- - -
+- - 
 
 ### Assessment
 
