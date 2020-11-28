@@ -1,8 +1,8 @@
-// Query all earthquakes in last 7 days
+// Earthquakes and Plates URL Variables
 var earthquake_url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 var plates_url = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
 
-// Perform requests and get data
+// Retrieve earthquakes and plates URL with D3
 d3.json(earthquake_url, function(data) {
   let earthquakeData = data.features
   d3.json(plates_url, function(data) {
@@ -14,7 +14,7 @@ d3.json(earthquake_url, function(data) {
 
 function createMap(earthquakeData, plateData) {
     
-    // Create markers
+    // Determine Style of Marker
     let earthquakeMarkers = earthquakeData.map((feature) =>
         L.circleMarker([feature.geometry.coordinates[1],feature.geometry.coordinates[0]],{
             radius: magCheck(feature.properties.mag),
@@ -27,18 +27,22 @@ function createMap(earthquakeData, plateData) {
             fillColor: magColor(feature.properties.mag),
             fillOpacity: 0.9   
         })
+
+        // Popup describing the place and time of the Earthquake
         .bindPopup("<h4>Location : " + feature.properties.place +
         "</h4><hr><p>Date & Time: " + new Date(feature.properties.time) +
         "</h3><hr><p>Magnitude" + feature.properties.mag + "</p>")
         );
 
-      // Create earthquake layers
+      // Initialize and create a LayerGroup "earthquakes"
       var earthquakes = L.layerGroup(earthquakeMarkers);
 
+      // Function to Determine the Polyline 
       function makePolyline(feature, layer){
         L.polyline(feature.geometry.coordinates);
       }
       
+      // Style of the Polyline
       let plates = L.geoJSON(plateData, {
         onEachFeature: makePolyline,
           style: {
@@ -47,7 +51,7 @@ function createMap(earthquakeData, plateData) {
           }
       })
 
-  // Create darkmap
+  // Adding darkmap tile layer
   var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
     tileSize: 512,
@@ -57,7 +61,7 @@ function createMap(earthquakeData, plateData) {
     accessToken: API_KEY
   });
 
-  // Create outdoors map
+  // // Adding outdoors map tile layer
   var outdoors = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
     tileSize: 512,
@@ -67,7 +71,7 @@ function createMap(earthquakeData, plateData) {
     accessToken: API_KEY
   });
 
-  // Create satellite map
+  // Adding satellite map tile layer
   var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
     tileSize: 512,
@@ -90,14 +94,14 @@ function createMap(earthquakeData, plateData) {
     Plates : plates
   };
 
-  // Create myMap
+  // Create myMap object
   var myMap = L.map("map", {
     center: [39.02, -97.82],
     zoom: 4,
     layers: [satellite, earthquakes]
   });
 
-// Create legend
+// Set Up Legend
 var legend = L.control({ position: "bottomright" });
 
 legend.onAdd = function(){
