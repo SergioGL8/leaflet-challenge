@@ -19,7 +19,7 @@ Table of contents <a name="toc"></a>
 ### Background <a name="1"></a>
 <sub><sup>[Go back to the table of contents](#toc)</sub></sup>
 
-![1-Logo](Images/1-Logo.png)
+![1-Logo](Instructions/Images/1-Logo.png)
 
 Welcome to the United States Geological Survey, or USGS for short! The USGS is responsible for providing scientific data about natural hazards, the health of our ecosystems and environment; and the impacts of climate and land-use change. Their scientists develop new methods and tools to supply timely, relevant, and useful information about the Earth and its processes. As a new hire, you will be helping them out with an exciting new project!
 
@@ -53,8 +53,6 @@ Your first task is to visualize an earthquake data set.
 - - -
 
 ### Level 2: More Data (Optional)
-
-![5-Advanced](Images/5-Advanced.png)
 
 The USGS wants you to plot a second data set on your map to illustrate the relationship between tectonic plates and seismic activity. You will need to pull in a second data set and visualize it along side your original set of data. Data on tectonic plates can be found at <https://github.com/fraxen/tectonicplates>.
 
@@ -114,7 +112,7 @@ Your final product will be assessed on the following metrics:
 ### Visualization <a name="6"></a>
 <sub><sup>[Go back to the table of contents](#toc)</sub></sup>
 
-![Dashboard screenshot](earthquake.png)
+![Dashboard screenshot](earthquakes.png)
 <br>
 ![Dashboard screenshot](tectonic.png)
 <br>
