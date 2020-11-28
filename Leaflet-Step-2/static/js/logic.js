@@ -124,7 +124,7 @@ L.control.layers(baseMaps, overlayMaps, {
   collapsed: true
 }).addTo(myMap);
 }
-
+    // // Function to Determine Color of Marker
      function magColor(mag) {
       var color = "";
       if (mag <= 2) { color = "#006633"; }
