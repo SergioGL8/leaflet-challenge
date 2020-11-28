@@ -10,7 +10,7 @@ var earthquake_url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/
 // Retrieve earthquakesURL with D3
 d3.json(earthquake_url, function(earthquakeData) {
 
-// Initialize and create a LayerGroup "earthquakes"
+// Initialize and create a LayerGroup "earthquake"
 var earthquake = new L.LayerGroup()
 
 // Adding tile layer
