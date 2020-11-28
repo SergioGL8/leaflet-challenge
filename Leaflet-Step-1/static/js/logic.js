@@ -85,7 +85,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     // Set Up Legend
     var legend = L.control({ position: "bottomright" });
     legend.onAdd = function() {
-        var div = L.DomUtil.create("div", "info legend"), 
+        var div = L.DomUtil.create("div", "legend"), 
         magnitudeLevels = [0, 1, 2, 3, 4, 5];
 
         div.innerHTML += "<h3>Magnitude</h3>"
